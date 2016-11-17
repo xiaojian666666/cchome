@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>案例1.6轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 680px;
+            height: 344px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #content img{
+            position: absolute;
+
+        }
+        #tab {
+            position:absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index:99999;
+        }
+        #tab li,#arrow span{
+            width: 20px;
+            height: 20px;
+            float: left;
+            background: black;
+            color: white;
+            line-height: 20px;
+            text-align: center;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        #tab .selected{
+            background:orange;
+        }
+        #arrow{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            z-index: 99999;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <img src="img/1.jpg" >
+        <img src="img/2.jpg" >
+        <img src="img/3.jpg" >
+        <img src="img/4.jpg" >
+    </div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrow">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+</div>
+<script src="../jslib.js"></script>
+<script>
+    var oContainer = document.getElementById('container');
+    var oContent = document.getElementById('content');
+    var aImg = oContent.getElementsByTagName('img');
+    var oTab = document.getElementById('tab');
+    var aLi = oTab.getElementsByTagName('li');
+    var oArrow = document.getElementById('arrow');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var iNow = 0;
+    for( var i=0; i<aImg.length;i++){
+        aImg[i].style.zIndex = aImg.length -i;
+    }
+    var zIndex = 4;
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+            changeImg(this.index);
+            iNow = this.index;
+    }};
+
+    oNext.onclick = function(){
+        iNow++;
+        if( iNow == aLi.length){
+            iNow=0;
+        }
+        changeImg(iNow);
+    };
+    oPrev.onclick = function(){
+        iNow--;
+        if(iNow == -1){
+            iNow = aLi.length-1;
+        }
+        changeImg(iNow);
+    };
+
+     var timer;
+        timer = setInterval(function(){
+            oNext.onclick();
+        },1000);
+
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            },1000);
+        };
+
+
+    function changeImg(aaa){
+                for( var j=0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                }
+        aLi[aaa].className = "selected";
+        var oImg = aImg[aaa];
+        oImg.style.opacity =0;
+        oImg.style.zIndex = ++zIndex;
+        oTab.style.zIndex = zIndex;
+        oArrow.style.zIndex = zIndex;
+        animate(oImg,{
+            opacity:100
+        });
+    }
+</script>
+</body>
+</html>
