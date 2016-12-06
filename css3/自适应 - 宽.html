@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*浮动方法*/
+        /*#div1{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*float: left;*/
+            /*background: red;*/
+        /*}*/
+        /*#div2{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*float: right;*/
+            /*background: blue;*/
+        /*}*/
+        /*#div3{*/
+            /*height: 200px;*/
+            /*margin: 0 200px;*/
+            /*background: green;*/
+        /*}*/
+
+
+        /*定位方法*/
+        /*#div1{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*top: 0;*/
+            /*background: red;*/
+        /*}*/
+        /*#div2{*/
+            /*height: 200px;*/
+            /*position: absolute;*/
+            /*left: 210px;*/
+            /*top: 0;*/
+            /*right: 210px;*/
+            /*background: yellow;*/
+        /*}*/
+        /*#div3{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*position: absolute;*/
+            /*right:0;*/
+            /*top: 0;*/
+            /*background: green;*/
+        /*}*/
+
+
+        /*box方法*/
+        body{
+            display: -webkit-box;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        #div2{
+            background: blue;
+            -webkit-box-flex: 1;
+        }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
