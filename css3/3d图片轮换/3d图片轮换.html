@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+        }
+        img{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transform-origin: center bottom;
+            -webkit-transform:  rotateX(180deg);
+            opacity: 0;
+        }
+        span{
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 50%;
+            background: #cccccc;
+            color: #ffffff;
+            position: absolute;
+            top: 50%;
+            margin-top: -22px;
+            box-shadow: 0 0 3px 2px rgba(0,0,0,0.3);
+            -webkit-text-stroke: 1px #000;
+        }
+        #prev{
+            left: -100px;
+        }
+        #next{
+            right: -100px;
+        }
+        .show{
+           animation: show 1s ease forwards;
+        }
+        @-webkit-keyframes show {
+            0%{
+
+            }
+            50%{
+                -webkit-transform: rotateX(-20deg);
+            }
+            60%{
+                -webkit-transform: rotateX(16deg);
+            }
+            70% {
+                -webkit-transform: rotateX(-12deg);
+            }
+            80{
+                -webkit-transform: rotateX(8deg);
+            }
+            90{
+                -webkit-transform: rotateX(-4deg);
+            }
+            100%{
+                -webkit-transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+        .hide{
+            -webkit-animation: hide 1s ease;
+        }
+        @-webkit-keyframes hide {
+            0%{
+                -webkit-transform: rotateX(0deg);
+                opacity: 1;
+            }
+            100%{
+                -webkit-transform: rotateX(-180deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="img">
+            <img src="img/1.jpg" alt="" class="show">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+        </div>
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+    <script>
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var aImg = document.getElementsByTagName('img');
+        var iNow =0;
+        oPrev.onclick = function(){
+            aImg[iNow].className = "hide";
+            iNow++;
+            if(iNow==aImg.length){
+                iNow=0;
+            }
+            aImg[iNow].className="show";
+        };
+        oNext.onclick = function(){
+            aImg[iNow].className = "hide";
+            iNow--;
+            if(iNow== -1){
+                iNow = aImg.length-1;
+            }
+            aImg[iNow].className="show";
+        }
+
+    </script>
+</body>
+</html>
