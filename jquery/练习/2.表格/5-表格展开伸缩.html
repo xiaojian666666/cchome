@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style1.css"/>
+</head>
+<body>
+<table>
+    <thead>
+    <tr><th>����</th><th>�Ա�</th><th>��ס��</th></tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="row_01"><td colspan="3">ǰ̨�����</td></tr>
+    <tr class="child_row_01"><td>��ɽ</td><td>��</td><td>�㽭����</td></tr>
+    <tr class="child_row_01"><td>����</td><td>Ů</td><td>�㽭����</td></tr>
+
+    <tr class="parent" id="row_02"><td colspan="3">ǰ̨������</td></tr>
+    <tr class="child_row_02"><td>����</td><td>��</td><td>���ϳ�ɳ</td></tr>
+    <tr class="child_row_02"><td>����</td><td>��</td><td>�㽭����</td></tr>
+
+    <tr class="parent" id="row_03"><td colspan="3">��̨������</td></tr>
+    <tr class="child_row_03"><td>Rain</td><td>��</td><td>�㽭����</td></tr>
+    <tr class="child_row_03"><td>MAXMAN</td><td>Ů</td><td>�㽭����</td></tr>
+    </tbody>
+</table>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+//    $('tr.parent').on('click', function () {
+//       $(this).toggleClass("selected").siblings('.child_'+this.id).toggle();
+//    })
+    $("tr.parent").on('click', function () {
+        if($(this).hasClass('selected')){
+            $(this).removeClass('selected').nextUntil('.parent').show();
+        }else{
+            $(this).addClass('selected').nextUntil('.parent').hide();
+        }
+    })
+</script>
+</body>
+</html>
