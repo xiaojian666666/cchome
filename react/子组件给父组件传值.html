@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div"></div>
+<script src="react-15.3.1/build/react.js"></script>
+<script src="react-15.3.1/build/react-dom.js"></script>
+<script src="react-15.3.1/browser.js"></script>
+<script type="text/babel">
+    var Company=React.createClass({
+        getDefaultProps:function(){
+            return{
+                companyArr:[]
+            }
+        },
+        handlechange:function(e){
+            this.props.change(e.target.checked)
+        },
+        render: function () {
+            var arr=[];
+            this.props.companyArr.forEach(function (value, index) {
+                    arr.push(<lable key={index}>{value}<input type="checkbox" onChange={this.handlechange}/></lable>)
+            }.bind(this));
+            return(
+                <div>{arr}</div>
+            )
+        }
+    });
+    var Component=React.createClass({
+        getInitialState: function () {
+            return{
+                count:0
+            }
+        },
+        change:function(checked){
+            this.setState({
+                        count:checked?this.state.count+1:this.state.count-1
+                    }
+            )
+        }    ,
+        render: function () {
+            var companyArr=['阿里','百度','腾讯'];
+            return(
+                <div>
+                    <h1>你被录取的公司的个数：{this.state.count}</h1>
+                    <Company companyArr={companyArr} change={this.change}/>
+                    </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <Component/>,
+            document.getElementById('div')
+    )
+</script>
+</body>
+</html>
