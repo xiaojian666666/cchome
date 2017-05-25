@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding:0;
+}
+ul{
+    list-style: none;
+}
+.container{
+    width: 680px;
+    height: 344px;
+    margin: 100px auto;
+    position: relative;
+}
+.container img{
+    display: none;
+}
+.container .selected{
+    display: block;
+}
+.tab {
+    position:absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.tab li,.arrow span{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: black;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 5px;
+    cursor:pointer;
+}
+.tab .selected{
+    background:orange;
+}
+.arrow{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.circle{
+    border-radius: 50% 50%;
+}
