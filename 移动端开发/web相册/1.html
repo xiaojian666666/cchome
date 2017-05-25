@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background: #000000;
+        }
+        #container li{
+            float: left;
+        }
+        #container li{
+            margin-right: 2px;
+        }
+        #container li:nth-child(4n){
+            margin-right: 0;
+        }
+        #container li img{
+            display: block;
+        }
+        #content{
+            display: none;
+            width: 100%;
+            height:100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <ul id="container"></ul>
+    <div id="content"></div>
+    <script>
+        $(function () {
+            var num=24;
+            var html='';
+            var $container=$("#container");
+            var iMargin=2;
+            var iNow;
+            for(var i=0;i<num;i++){
+                html+='<li><img src="img/thumbs/'+(i+1)+'.jpg"></li>'
+            }
+            $container.append(html);
+            $("img",$container).css({
+                width:($('body').width()-3*iMargin)/4,
+                height: ($('body').width()-3*iMargin)/4,
+            }).on('tap', function (e) {
+                $container.hide();
+                var index=$("#container img").index($(this));
+                iNow=index;
+                $("#content").show().css("background-image","url(img/"+(index+1)+".jpg)");
+                e.preventDefault();
+            })
+            $("#content").on('tap', function (e) {
+                $(this).hide();
+                $container.show();
+                e.preventDefault();
+            }).on("swipeleft", function () {
+                iNow++;
+                if(iNow==num){
+                    iNow=0;
+                }
+                $("#content").css("background-image","url(img/"+(iNow+1)+".jpg)");
+            }).on('swiperight', function () {
+                iNow--;
+                if(iNow==-1){
+                    iNow=num-1;
+                }
+                $("#content").css("background-image","url(img/"+(iNow+1)+".jpg)");
+            })
+
+        })
+    </script>
+</body>
+</html>
