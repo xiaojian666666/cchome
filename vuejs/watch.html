@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .show{
+        height: 200px;
+        width: 200px;
+        background: #ff0000;
+    }
+    .none{
+        display: none;
+    }
+</style>
+<body>
+<div id="app">
+    <button @click="fn">click</button>
+    <div class="show":class="{none:isNone}"></div>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            isNone:false
+        },
+        methods:{
+            fn: function () {
+               this.isNone=!this.isNone
+            }
+        }
+    })
+</script>
+</body>
+</html>

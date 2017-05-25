@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            list-style:none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    是否需要额外付费设施<input type="checkbox" @click="fn1"/>
+    <ul id="list">
+        <li v-for="obj in arr1">
+            {{obj.name}} {{obj.price}} <input type="checkbox" @click="fn2(obj)"/>
+        </li>
+    </ul>
+    订单费用设施
+    <ul>
+        <li v-for="val in arr2">
+            {{val.name}} {{val.price}}
+        </li>
+    </ul>
+    总价:{{totle}}
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            arr1:[],
+            arr2:[{name:'豪华型',price:1000}],
+            totle:''
+        },
+        methods:{
+          fn1: function () {
+            if(event.target.checked){
+                this.arr1=[{name:'床',price:400},{name:'沙发',price:600},{name:'桌子',price:800}]
+            }else{
+                this.arr1.splice(0);
+                this.arr2.splice(1);
+            }
+          },
+            fn2: function (obj) {
+            if(event.target.checked){
+                obj.checked=true;
+            }else{
+                obj.checked=false;
+            }
+            var _this=this;
+              this.arr2.forEach(function (val) {
+                  if (val.checked) {
+                      _this.arr2.push(val);
+                  }
+              })
+        },
+        computed:{
+            totle: function () {
+                var t=0;
+                this.arr2.forEach(function (val) {
+                    t += val.price;
+                })
+                return t;
+            }
+//            totle:{
+//                set: function (newval,oldval) {
+//
+//                },
+//                get: function () {
+//
+//                }
+//            }
+        }
+    }})
+</script>
+</body>
+</html>
