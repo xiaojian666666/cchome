@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>首页</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript">
+	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+</script>
+
+
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script src="js/menu_jquery.js"></script>
+
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+</head>
+<body>
+<script>$(document).ready(function(c) {
+	$('.ban-main-cls').on('click', function(c){
+		$('.bann-close').fadeOut('slow', function(c){
+	  		$('.bann-close').remove();
+		});
+	});	  
+});
+</script>
+<!--header start here-->
+<div class="header">
+		<div class="header-main">
+          <div class="top-nav">
+			  	<span class="menu"> <img src="images/icon.png" alt=""/></span>
+				<ul class="res">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="us.html">关于我们</a></li>
+					<li><a href="animal.html">宠物介绍</a></li>
+					<li><a href="news.html">最新动态</a></li>
+					<li><a href="contact.html">联系我们</a></li>
+					<li><a href="active.html">精彩活动</a></li>
+					<li><a href="custom.html">活动定制</a></li>
+					<li><a href="reg.html">用户注册</a></li>
+					<li><a href="background.html">后台管理</a></li>
+				</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+			 <div class="header-right">
+			 <div class="search-box">
+				<div id="sb-search" class="sb-search">
+					<form>
+						<input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+						<input class="sb-search-submit" type="submit" value="">
+						<span class="sb-icon-search"> </span>
+					</form>
+			   </div>
+			</div>
+			  <!-- search-scripts -->
+					<script src="js/classie.js"></script>
+					<script src="js/uisearch.js"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+					<!-- //search-scripts -->
+					<div class="head-button">
+					<div id="loginContainer"><a href="#" id="loginButton"><span>登录</span></a>
+						    <div id="loginBox">
+						        <form id="loginForm">
+						                <fieldset id="body">
+						                	<fieldset>
+						                          <label for="email">用户名</label>
+						                          <input type="text" name="email" id="email">
+						                    </fieldset>
+						                    <fieldset>
+						                            <label for="password">密码</label>
+						                            <input type="password" name="password" id="password">
+						                     </fieldset>
+						                    <input type="submit" id="login" value="登录">
+						            	</fieldset>
+							 </form>
+				        </div>
+					</div>
+				</div>
+		<div class="clearfix"> </div>
+     </div>
+     <div class="clearfix"> </div>
+   </div>
+
+</div>
+<!--header end here-->
+<!--banner start here-->
+<div class="banner">
+	<div class="container">
+		<div class="banner-main">
+			 <a href="index.html"><img src="images/logo.png" alt="" class="img-class"></a>
+
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+</div>
+<!--banner end here-->
+
+<!--services start here-->
+<div class="services" id="service">
+	<div class="container">
+		<div class="services-main">
+			 <h3>我们的服务</h3>
+			 <div class="service-bottom">
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s1.png" alt="">
+			 		<h4>宠物相处</h4>
+			 		<p>我们会妥善处理宠物宝贝们之间的和谐相处，避免发生任何意外</p>
+			 	</div>
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s2.png" alt="">
+			 		<h4>健康保证</h4>
+			 		<p>我们的职业宠物医生会定期检查宠物的身体状况，保证宠物的将康</p>
+			 	</div>
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s3.png" alt="">
+			 		<h4>居住环境</h4>
+			 		<p>每一个宠物都有自己单独的居住环境，温暖舒适，宽敞明亮</p>
+			 	</div>
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s4.png" alt="">
+			 		<h4>宠物营养</h4>
+			 		<p>我们的宠物护士是专门指定合理的宠物饮食计划，保证宠物吃的健康</p>
+			 	</div>
+			 	<div class="clearfix"> </div>
+			 </div>
+			 <div class="service1">
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s5.png" alt="">
+			 		<h4>训练计划</h4>
+			 		<p>我们有专门的宠物训练师，单独培养宠物的能力，让宠物更加聪明</p>
+			 	</div>
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s6.png" alt="">
+			 		<h4>宠物食物</h4>
+			 		<p>我们保证宠物的饮食健康，保证宠物可以吃饱，吃好，吃的健康</p>
+			 	</div>
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s7.png" alt="">
+			 		<h4>宠物美容</h4>
+			 		<p>我们有职业的宠物美容师，会定期给宠物做美容，保持其最美的姿态</p>
+			 	</div>
+			 	<div class="col-md-3 service-grid">
+			 		<img src="images/s8.png" alt="">
+			 		<h4>宠物散步</h4>
+			 		<p>我们有专门的人员，每天在特定的时间陪同宠物散步，保证身体健康</p>
+			 	</div>
+			 	<div class="clearfix"> </div>
+			 </div>
+		</div>
+	</div>
+</div>
+<!--services end here-->
+
+<!--light-box-files -->
+		<script src="js/jquery.chocolat.js"></script>
+		<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('.gallery-bottom a').Chocolat();
+		});
+		</script>
+
+<div class="gallery" id="gallery">
+	<div class="container">
+		<div class="gallery-main">
+			<h3>顾客留影</h3>
+			<div class="gallery-bottom">
+				<div class="gallery-1">
+					<div class="col-md-3 gallery-left">
+						<a href="images/p1.jpg" rel="title">
+							<img class="img-responsive" src="images/p1.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-md-3 gallery-left">
+						<a href="images/p2.jpg" rel="title">
+							<img class="img-responsive" src="images/p2.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-md-3 gallery-left">
+						<a href="images/p3.jpg" rel="title">
+							<img class="img-responsive" src="images/p3.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-md-3 gallery-left">
+						<a href="images/p4.jpg" rel="title">
+							<img class="img-responsive" src="images/p4.jpg" alt="">
+						</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="gallery-1">
+					<div class="col-md-3 gallery-left">
+						<a href="images/p5.jpg" rel="title">
+							<img class="img-responsive" src="images/p5.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-md-3 gallery-left">
+						<a href="images/p6.jpg" rel="title">
+							<img class="img-responsive" src="images/p6.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-md-3 gallery-left">
+						<a href="images/p7.jpg" rel="title">
+							<img class="img-responsive" src="images/p7.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-md-3 gallery-left">
+						<a href="images/p8.jpg" rel="title">
+							<img class="img-responsive" src="images/p8.jpg" alt="">
+						</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+
+		 </div>
+	</div>
+</div>
+<!--gallery  end here-->
+
+<!--map start here-->
+
+<!--map end here-->
+<!--contact start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="col-md-5 footer-left">
+	           <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="#" target="_blank" title="宠物俱乐部">宠物俱乐部</a> - Collect from <a href="#" title="网页模板" target="_blank">宠物关爱</a></p>
+			</div>
+			<div class="col-md-7 footer-right">
+				<ul>
+					<li><a class="active  scroll" href="#home">Home</a></li>
+					<li><a class="scroll" href="#about">About</a></li>
+					<li><a class="scroll" href="#team">Team</a></li>
+					<li><a class="scroll" href="#service">Services</a></li>
+					<li><a class="scroll" href="#gallery">Gallery</a></li>
+					<li><a class="scroll" href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		  <div class="clearfix"> </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+										$(document).ready(function() {
+											/*
+											var defaults = {
+									  			containerID: 'toTop', // fading element id
+												containerHoverID: 'toTopHover', // fading element hover id
+												scrollSpeed: 1200,
+												easingType: 'linear' 
+									 		};
+											*/
+											
+											$().UItoTop({ easingType: 'easeOutQuart' });
+											
+										});
+									</script>
+						<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</div>
+<!--footer end here-->
+</body>
+</html>

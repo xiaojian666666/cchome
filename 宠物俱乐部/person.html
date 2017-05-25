@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>后台管理</title>
+    <base href="<?php echo site_url();?>" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <link rel="stylesheet" href="assets/css/background.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+
+
+    <script type="assets/text/javascript" src="js/move-top.js"></script>
+    <script type="assets/text/javascript" src="js/easing.js"></script>
+    <script src="assets/js/menu_jquery.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+</head>
+<body>
+<script>$(document).ready(function(c) {
+    $('.ban-main-cls').on('click', function(c){
+        $('.bann-close').fadeOut('slow', function(c){
+            $('.bann-close').remove();
+        });
+    });
+});
+</script>
+<!--header start here-->
+<!--header start here-->
+<div class="header">
+        <div class="header-main">
+          <div class="top-nav">
+                <span class="menu"> <img src="assets/images/icon.png" alt=""/></span>
+                <ul class="res">
+                    <li><a href="<?php echo site_url('user/index1')?>">首页</a></li>
+                    <li><a href="<?php echo site_url('user/us')?>">关于我们</a></li>
+                    <li><a href="<?php echo site_url('user/animal')?>">宠物介绍</a></li>
+                    <li><a href="<?php echo site_url('user/news')?>">最新动态</a></li>
+                    <li><a href="<?php echo site_url('user/contact')?>">联系我们</a></li>
+                    <li><a href="<?php echo site_url('user/active')?>">精彩活动</a></li>
+                    <li><a href="<?php echo site_url('user/customs')?>">活动定制</a></li>
+                    <li><a href="<?php echo site_url('user/reg')?>">用户注册</a></li>
+                    <li><a href="<?php echo site_url('user/backgrounds')?>">后台管理</a></li>
+                </ul>
+
+             </div>
+             <div class="header-right">
+             <div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+               </div>
+            </div>
+              <!-- search-scripts -->
+                    <script src="assets/js/classie.js"></script>
+                    <script src="assets/js/uisearch.js"></script>
+                        <script>
+                            new UISearch( document.getElementById( 'sb-search' ) );
+                        </script>
+                    <!-- //search-scripts -->
+                    <div class="head-button">
+                    <div id="loginContainer"><a href="<?php echo site_url('user/login')?>" id="loginButton"><span>注销</span></a>
+                           
+                    </div>
+                </div>
+        <div class="clearfix"> </div>
+     </div>
+     <div class="clearfix"> </div>
+   </div>
+
+</div>
+<div class="bg">
+    <div class="bg-left">
+        <div class="left-1">
+            <img src="assets/images/tx.jpg" alt=""/>
+            <p>欢迎</p>
+            <?php
+                foreach ($active_user as $n) {
+            ?>
+            <h4><?php echo $n->name?></h4>
+            <?php } ?>
+            <p>到来</p>
+        </div>
+        <div class="left-2">
+            <div class="left-2-title">
+                <h4>日历</h4>
+            </div>
+            <div class="left-2-content">
+                <img src="assets/images/rl.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="left-3">
+            <div class="left-3-title">
+                <h4>天气</h4>
+            </div>
+            <div class="left-3-content">
+                <img src="assets/images/tq.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="bg-right">
+        <form action="" method="" class="form-person">
+            姓名：<input type="text" name="name" value=""></input><br>
+            性别：<input type="checkbox" name="sex[]" value="男">男</input><input type="checkbox" name="sex[]" value="女">女</input><br>
+            出生日期：<input type="text" name="data" ></input><br>
+            所在地：<input type="text" name="place"></input><br>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="footer-main">
+            <div class="col-md-5 footer-left">
+                <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="#" target="_blank" title="宠物俱乐部">宠物俱乐部</a> - Collect from <a href="#" title="网页模板" target="_blank">宠物关爱</a></p>
+            </div>
+            <div class="col-md-7 footer-right">
+                <ul>
+                    <li><a class="active  scroll" href="#home">Home</a></li>
+                    <li><a class="scroll" href="#about">About</a></li>
+                    <li><a class="scroll" href="#team">Team</a></li>
+                    <li><a class="scroll" href="#service">Services</a></li>
+                    <li><a class="scroll" href="#gallery">Gallery</a></li>
+                    <li><a class="scroll" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!--footer end here-->
+</body>
+</html>
